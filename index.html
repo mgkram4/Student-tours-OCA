@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide active">
+            <h1>An Introduction to AI</h1>
+            <p>A one-hour journey into the world of Artificial Intelligence</p>
+        </div>
+
+        <div class="slide">
+            <h2>Section 1: What is AI?</h2>
+        </div>
+
+        <div class="slide">
+            <h3>A Brief History of Modern AI</h3>
+            <ul class="timeline">
+                <li><span>2000s</span> - Rise of Machine Learning, widespread use in tech giants.</li>
+                <li><span>2012</span> - AlexNet wins ImageNet, kicking off the Deep Learning boom.</li>
+                <li><span>2017</span> - "Attention Is All You Need" paper introduces the Transformer architecture.</li>
+                <li><span>2020</span> - OpenAI releases GPT-3, showcasing the power of large language models.</li>
+                <li><span>2022</span> - ChatGPT is released, bringing advanced AI to the public.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h3>Traditional AI vs. Deep Learning</h3>
+            <div class="two-columns">
+                <div class="column">
+                    <h4>Traditional AI / ML</h4>
+                    <ul>
+                        <li>Relies on structured data and feature engineering.</li>
+                        <li><strong>Use cases:</strong> Spam filtering, recommendation engines, fraud detection.</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Deep Learning</h4>
+                    <ul>
+                        <li>Uses neural networks with many layers.</li>
+                        <li>Learns features directly from data (text, images, sound).</li>
+                        <li><strong>Use cases:</strong> Image recognition, natural language understanding, self-driving cars.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>The ChatGPT Revolution</h3>
+            <p>ChatGPT represents a breakthrough in <strong>Generative AI</strong>, marking a shift from traditional AI approaches:</p>
+            <div class="two-columns">
+                <div class="column">
+                    <h4>Traditional AI & Deep Learning</h4>
+                    <ul>
+                        <li>Task-specific models (classification, prediction)</li>
+                        <li>Requires labeled training data</li>
+                        <li>Outputs structured results (numbers, categories)</li>
+                        <li>Limited to specific domains</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Generative AI (ChatGPT)</h4>
+                    <ul>
+                        <li>Creates new content (text, images, code)</li>
+                        <li>Learns from vast amounts of unlabeled data</li>
+                        <li>Generates human-like responses</li>
+                        <li>Versatile across many domains</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Section 2: How to Use ChatGPT</h2>
+        </div>
+
+        <div class="slide">
+            <h3>The Perfect Prompt</h3>
+            <p>The quality of your output depends heavily on the quality of your input. Here are some keys to a great prompt:</p>
+            <ul>
+                <li><strong>Be Specific:</strong> Provide details and context.</li>
+                <li><strong>Define the Persona:</strong> "Act as a senior software engineer..."</li>
+                <li><strong>Provide Examples:</strong> Show the format you want.</li>
+                <li><strong>Iterate:</strong> Refine your prompt based on the output.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h3>Using a Persona</h3>
+            <p>Telling the AI to adopt a persona can dramatically improve the quality of the response for specific tasks.</p>
+            <div class="code-block">
+                <pre><code>
+# Vague Prompt
+"Explain how a CPU works."
+
+# Good Prompt with Persona
+"You are a computer science professor teaching an introductory course. 
+Explain how a CPU works to a first-year student. 
+Use an analogy to make it easier to understand."
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>Prompt Example: Making a Website</h3>
+            <p>Here's a prompt to generate a simple portfolio website.</p>
+            <div class="code-block">
+                <pre><code>
+Act as an expert web developer.
+
+Create a single HTML file for a personal portfolio website for a developer named Alex Doe.
+
+The website should have:
+1. A navigation bar with links to "About", "Projects", and "Contact".
+2. An "About" section with a placeholder for a photo and a short bio.
+3. A "Projects" section that lists 3 projects with short descriptions.
+4. A "Contact" section with a simple contact form (Name, Email, Message).
+5. Use modern and clean HTML5 and CSS. All CSS should be in a `&lt;style&gt;` tag in the head of the document.
+                </code></pre>
+            </div>
+        </div>
+        
+        <div class="slide">
+            <h3>Code Example: Website from a Prompt</h3>
+            <p>And here's a snippet of what ChatGPT might produce:</p>
+            <div class="code-block">
+                <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Alex Doe - Portfolio&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: sans-serif; }
+        nav { background: #333; color: white; padding: 1rem; }
+        /* ... more styles ... */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+    &lt;section id="about"&gt;...&lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h3>Prompt Example: Making a Game</h3>
+            <p>Let's try making a simple Python game.</p>
+            <div class="code-block">
+                <pre><code>
+Act as a Python game developer.
+
+Write the code for a simple text-based adventure game.
+
+The game should have:
+1. A player who can move between rooms.
+2. At least three rooms: "Cave Entrance", "Dark Tunnel", "Treasure Room".
+3. The player should be able to type commands like "go north", "go south".
+4. The goal is to find the treasure in the "Treasure Room".
+5. The code should be a single Python script.
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Section 3: Image Generation</h2>
+        </div>
+
+        <div class="slide">
+            <h3>Perfecting the Image Prompt</h3>
+            <p>For image generation, detail is key. The model can't see what's in your head.</p>
+            <ul>
+                <li><strong>Subject:</strong> What is the main focus? Be very descriptive.</li>
+                <li><strong>Style:</strong> Photorealistic, cartoon, oil painting, 3D render?</li>
+                <li><strong>Composition:</strong> Close-up, wide shot, portrait?</li>
+                <li><strong>Lighting:</strong> Soft morning light, dramatic cinematic lighting, neon glow?</li>
+                <li><strong>Keywords:</strong> Use terms like "masterpiece", "highly detailed", "8K".</li>
+            </ul>
+        </div>
+        
+        <div class="slide">
+            <h3>Image Prompt Examples</h3>
+            <div class="two-columns">
+                <div class="column">
+                    <h4>Simple Prompt</h4>
+                    <p><em>"An astronaut"</em></p>
+                    <p class="prompt-result">Result: A generic, likely simple drawing of an astronaut.</p>
+                </div>
+                <div class="column">
+                    <h4>Detailed Prompt</h4>
+                    <p><em>"Photorealistic shot of an astronaut on a vibrant, alien planet with two suns, dramatic lighting, 1970s sci-fi film style, highly detailed."</em></p>
+                    <p class="prompt-result">Result: A rich, cinematic, and specific image.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide">
+            <h3>Hands-On Demo: Let's build a prompt!</h3>
+            <p>We can combine elements to create a unique image. Let's pick from these categories or suggest your own!</p>
+            <div class="code-block" style="text-align: center;">
+                <pre><code>[Style] of a [Subject] with [Details] in a [Setting]</code></pre>
+            </div>
+            <p style="margin-top: 20px;"><strong>Example:</strong> "A watercolor painting of a robot librarian with glowing eyes in a futuristic library."</p>
+        </div>
+
+        <div class="slide">
+            <h2>Section 4: Computer Vision</h2>
+        </div>
+        
+        <div class="slide">
+            <h3>Real-time Computer Vision</h3>
+            <p>Computer vision allows machines to "see" and interpret the visual world. Real-time applications are everywhere:</p>
+            <ul>
+                <li>Self-driving cars detecting obstacles.</li>
+                <li>Manufacturing for quality control.</li>
+                <li>Augmented Reality filters on social media.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h3>Code Example: Simple CV with Python</h3>
+            <p>Here is a Python script using OpenCV to detect faces in a webcam feed.</p>
+            <div class="code-block">
+                <pre><code class="language-python">
+import cv2
+
+# Load the pre-trained face detector
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+
+video_capture = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = video_capture.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+
+    # Draw a rectangle around the faces
+    for (x, y, w, h) in faces:
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
+    cv2.imshow('Video', frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+video_capture.release()
+cv2.destroyAllWindows()
+                </code></pre>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <h2>Section 5: AI Ethics & Safety</h2>
+        </div>
+
+        <div class="slide">
+            <h3>Responsible AI</h3>
+            <p>With great power comes great responsibility. It's crucial to consider the ethical implications of AI.</p>
+            <ul>
+                <li><strong>Bias:</strong> AI models can learn and amplify biases present in their training data.</li>
+                <li><strong>Privacy:</strong> Systems that process personal data must be designed to be secure and protect privacy.</li>
+                <li><strong>Misinformation:</strong> Generative models can be used to create convincing but false information.</li>
+                <li><strong>Accountability:</strong> Who is responsible when an AI system makes a mistake?</li>
+            </ul>
+        </div>
+
+
+        <div class="slide">
+            <h2>Section 6: The Future is Agents</h2>
+        </div>
+
+        <div class="slide">
+            <h3>Using AI Agents</h3>
+            <p>AI agents are systems that can perceive their environment and take actions to achieve goals. They represent a shift from single-response tools to persistent collaborators.</p>
+            <p>Think of them as autonomous helpers that can perform multi-step tasks like:</p>
+            <ul class="task-list">
+                <li>Planning and executing a software project.</li>
+                <li>Performing complex data analysis and generating a report.</li>
+                <li>Automating research on a specific topic.</li>
+            </ul>
+        </div>
+        
+        <div class="slide">
+            <h3>How Agents Work (Simplified)</h3>
+            <p>Many agents follow a "ReAct" (Reason and Act) loop:</p>
+            <ol>
+                <li><strong>Goal:</strong> Receive a high-level objective from the user.</li>
+                <li><strong>Think:</strong> Break down the goal into smaller, actionable steps.</li>
+                <li><strong>Act:</strong> Execute a step (e.g., run code, search the web, write to a file).</li>
+                <li><strong>Observe:</strong> Analyze the result of the action.</li>
+                <li><strong>Repeat:</strong> Adjust the plan based on the observation and continue until the goal is met.</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h1>Thank You & Q&A</h1>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="nav-arrow prev" id="prevBtn">&#10094;</button>
+        <button class="nav-arrow next" id="nextBtn">&#10095;</button>
+
+        <div class="progress-bar-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
