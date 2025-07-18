@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#007bff">
     <title>Introduction to AI</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,91 +13,142 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
     <div class="slideshow-container">
+        <!-- Translate Button -->
+        <button class="translate-btn" id="translateBtn">中文</button>
+        
         <div class="slide active">
-            <h1>An Introduction to AI</h1>
-            <p>A one-hour journey into the world of Artificial Intelligence</p>
+            <h1 data-en="An Introduction to AI" data-zh="人工智能简介">An Introduction to AI</h1>
+            <p data-en="A one-hour journey into the world of Artificial Intelligence" data-zh="一小时的AI世界探索之旅">A one-hour journey into the world of Artificial Intelligence</p>
         </div>
 
         <div class="slide">
-            <h2>Section 1: What is AI?</h2>
+            <h3 data-en="Scan the QR Code" data-zh="扫描二维码">Scan the QR Code</h3>
+            <p data-en="Use your phone to scan this QR code for additional resources" data-zh="用手机扫描此二维码获取额外资源">Use your phone to scan this QR code for additional resources</p>
+            <div class="qr-code-container">
+                <img src="/public/qr-code.png" alt="QR Code" class="qr-code-image">
+            </div>
         </div>
 
         <div class="slide">
-            <h3>A Brief History of Modern AI</h3>
+            <h2 data-en="Section 1: What is AI?" data-zh="第一部分：什么是人工智能？">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Section 1: What is AI?
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h3 data-en="A Brief History of Modern AI" data-zh="现代AI简史">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                </svg>
+                A Brief History of Modern AI
+            </h3>
             <ul class="timeline">
-                <li><span>2000s</span> - Rise of Machine Learning, widespread use in tech giants.</li>
-                <li><span>2012</span> - AlexNet wins ImageNet, kicking off the Deep Learning boom.</li>
-                <li><span>2017</span> - "Attention Is All You Need" paper introduces the Transformer architecture.</li>
-                <li><span>2020</span> - OpenAI releases GPT-3, showcasing the power of large language models.</li>
-                <li><span>2022</span> - ChatGPT is released, bringing advanced AI to the public.</li>
+                <li><span data-en="2000s" data-zh="2000年代">2000s</span> - <span data-en="Rise of Machine Learning, widespread use in tech giants." data-zh="机器学习兴起，在科技巨头中广泛应用。">Rise of Machine Learning, widespread use in tech giants.</span></li>
+                <li><span data-en="2012" data-zh="2012年">2012</span> - <span data-en="AlexNet wins ImageNet, kicking off the Deep Learning boom." data-zh="AlexNet赢得ImageNet竞赛，开启深度学习热潮。">AlexNet wins ImageNet, kicking off the Deep Learning boom.</span></li>
+                <li><span data-en="2017" data-zh="2017年">2017</span> - <span data-en='"Attention Is All You Need" paper introduces the Transformer architecture.' data-zh='"注意力机制就是一切"论文介绍了Transformer架构。'>"Attention Is All You Need" paper introduces the Transformer architecture.</span></li>
+                <li><span data-en="2020" data-zh="2020年">2020</span> - <span data-en="OpenAI releases GPT-3, showcasing the power of large language models." data-zh="OpenAI发布GPT-3，展示了大语言模型的强大能力。">OpenAI releases GPT-3, showcasing the power of large language models.</span></li>
+                <li><span data-en="2022" data-zh="2022年">2022</span> - <span data-en="ChatGPT is released, bringing advanced AI to the public." data-zh="ChatGPT发布，将先进AI带给公众。">ChatGPT is released, bringing advanced AI to the public.</span></li>
             </ul>
         </div>
 
         <div class="slide">
-            <h3>Traditional AI vs. Deep Learning</h3>
+            <h3 data-en="Traditional AI vs. Deep Learning" data-zh="传统AI vs 深度学习">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
+                </svg>
+                Traditional AI vs. Deep Learning
+            </h3>
             <div class="two-columns">
                 <div class="column">
-                    <h4>Traditional AI / ML</h4>
+                    <h4 data-en="Traditional AI / ML" data-zh="传统AI/机器学习">Traditional AI / ML</h4>
                     <ul>
-                        <li>Relies on structured data and feature engineering.</li>
-                        <li><strong>Use cases:</strong> Spam filtering, recommendation engines, fraud detection.</li>
+                        <li data-en="Relies on structured data and feature engineering." data-zh="依赖结构化数据和特征工程。">Relies on structured data and feature engineering.</li>
+                        <li><strong data-en="Use cases:" data-zh="应用场景：">Use cases:</strong> <span data-en="Spam filtering, recommendation engines, fraud detection." data-zh="垃圾邮件过滤、推荐引擎、欺诈检测。">Spam filtering, recommendation engines, fraud detection.</span></li>
                     </ul>
                 </div>
                 <div class="column">
-                    <h4>Deep Learning</h4>
+                    <h4 data-en="Deep Learning" data-zh="深度学习">Deep Learning</h4>
                     <ul>
-                        <li>Uses neural networks with many layers.</li>
-                        <li>Learns features directly from data (text, images, sound).</li>
-                        <li><strong>Use cases:</strong> Image recognition, natural language understanding, self-driving cars.</li>
+                        <li data-en="Uses neural networks with many layers." data-zh="使用多层神经网络。">Uses neural networks with many layers.</li>
+                        <li data-en="Learns features directly from data (text, images, sound)." data-zh="直接从数据中学习特征（文本、图像、声音）。">Learns features directly from data (text, images, sound).</li>
+                        <li><strong data-en="Use cases:" data-zh="应用场景：">Use cases:</strong> <span data-en="Image recognition, natural language understanding, self-driving cars." data-zh="图像识别、自然语言理解、自动驾驶汽车。">Image recognition, natural language understanding, self-driving cars.</span></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="slide">
-            <h3>The ChatGPT Revolution</h3>
-            <p>ChatGPT represents a breakthrough in <strong>Generative AI</strong>, marking a shift from traditional AI approaches:</p>
+            <h3 data-en="The ChatGPT Revolution" data-zh="ChatGPT革命">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+                The ChatGPT Revolution
+            </h3>
+            <p data-en="ChatGPT represents a breakthrough in Generative AI, marking a shift from traditional AI approaches:" data-zh="ChatGPT代表了生成式AI的突破，标志着从传统AI方法的转变：">ChatGPT represents a breakthrough in <strong data-en="Generative AI" data-zh="生成式AI">Generative AI</strong>, marking a shift from traditional AI approaches:</p>
             <div class="two-columns">
                 <div class="column">
-                    <h4>Traditional AI & Deep Learning</h4>
+                    <h4 data-en="Traditional AI & Deep Learning" data-zh="传统AI和深度学习">Traditional AI & Deep Learning</h4>
                     <ul>
-                        <li>Task-specific models (classification, prediction)</li>
-                        <li>Requires labeled training data</li>
-                        <li>Outputs structured results (numbers, categories)</li>
-                        <li>Limited to specific domains</li>
+                        <li data-en="Task-specific models (classification, prediction)" data-zh="特定任务模型（分类、预测）">Task-specific models (classification, prediction)</li>
+                        <li data-en="Requires labeled training data" data-zh="需要标记的训练数据">Requires labeled training data</li>
+                        <li data-en="Outputs structured results (numbers, categories)" data-zh="输出结构化结果（数字、类别）">Outputs structured results (numbers, categories)</li>
+                        <li data-en="Limited to specific domains" data-zh="局限于特定领域">Limited to specific domains</li>
                     </ul>
                 </div>
                 <div class="column">
-                    <h4>Generative AI (ChatGPT)</h4>
+                    <h4 data-en="Generative AI (ChatGPT)" data-zh="生成式AI（ChatGPT）">Generative AI (ChatGPT)</h4>
                     <ul>
-                        <li>Creates new content (text, images, code)</li>
-                        <li>Learns from vast amounts of unlabeled data</li>
-                        <li>Generates human-like responses</li>
-                        <li>Versatile across many domains</li>
+                        <li data-en="Creates new content (text, images, code)" data-zh="创建新内容（文本、图像、代码）">Creates new content (text, images, code)</li>
+                        <li data-en="Learns from vast amounts of unlabeled data" data-zh="从大量未标记数据中学习">Learns from vast amounts of unlabeled data</li>
+                        <li data-en="Generates human-like responses" data-zh="生成类人回应">Generates human-like responses</li>
+                        <li data-en="Versatile across many domains" data-zh="跨多个领域通用">Versatile across many domains</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="slide">
-            <h2>Section 2: How to Use ChatGPT</h2>
+            <h2 data-en="Section 2: How to Use ChatGPT" data-zh="第二部分：如何使用ChatGPT">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/>
+                </svg>
+                Section 2: How to Use ChatGPT
+            </h2>
         </div>
 
         <div class="slide">
-            <h3>The Perfect Prompt</h3>
-            <p>The quality of your output depends heavily on the quality of your input. Here are some keys to a great prompt:</p>
+            <h3 data-en="The Perfect Prompt" data-zh="完美提示">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+                The Perfect Prompt
+            </h3>
+            <p data-en="The quality of your output depends heavily on the quality of your input. Here are some keys to a great prompt:" data-zh="输出的质量很大程度上取决于输入的质量。以下是优秀提示的关键要素：">The quality of your output depends heavily on the quality of your input. Here are some keys to a great prompt:</p>
             <ul>
-                <li><strong>Be Specific:</strong> Provide details and context.</li>
-                <li><strong>Define the Persona:</strong> "Act as a senior software engineer..."</li>
-                <li><strong>Provide Examples:</strong> Show the format you want.</li>
-                <li><strong>Iterate:</strong> Refine your prompt based on the output.</li>
+                <li><strong data-en="Be Specific:" data-zh="要具体：">Be Specific:</strong> <span data-en="Provide details and context." data-zh="提供细节和上下文。">Provide details and context.</span></li>
+                <li><strong data-en="Define the Persona:" data-zh="定义角色：">Define the Persona:</strong> <span data-en='"Act as a senior software engineer..."' data-zh='"扮演高级软件工程师..."'>"Act as a senior software engineer..."</span></li>
+                <li><strong data-en="Provide Examples:" data-zh="提供示例：">Provide Examples:</strong> <span data-en="Show the format you want." data-zh="展示你想要的格式。">Show the format you want.</span></li>
+                <li><strong data-en="Iterate:" data-zh="迭代：">Iterate:</strong> <span data-en="Refine your prompt based on the output." data-zh="根据输出优化你的提示。">Refine your prompt based on the output.</span></li>
             </ul>
         </div>
 
         <div class="slide">
-            <h3>Using a Persona</h3>
-            <p>Telling the AI to adopt a persona can dramatically improve the quality of the response for specific tasks.</p>
+            <h3 data-en="Using a Persona" data-zh="使用角色">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                Using a Persona
+            </h3>
+            <p data-en="Telling the AI to adopt a persona can dramatically improve the quality of the response for specific tasks." data-zh="让AI采用特定角色可以显著提高特定任务回应的质量。">Telling the AI to adopt a persona can dramatically improve the quality of the response for specific tasks.</p>
             <div class="code-block">
                 <pre><code>
 # Vague Prompt
@@ -109,8 +163,13 @@ Use an analogy to make it easier to understand."
         </div>
 
         <div class="slide">
-            <h3>Prompt Example: Making a Website</h3>
-            <p>Here's a prompt to generate a simple portfolio website.</p>
+            <h3 data-en="Prompt Example: Making a Website" data-zh="提示示例：制作网站">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+                </svg>
+                Prompt Example: Making a Website
+            </h3>
+            <p data-en="Here's a prompt to generate a simple portfolio website." data-zh="这是一个生成简单作品集网站的提示。">Here's a prompt to generate a simple portfolio website.</p>
             <div class="code-block">
                 <pre><code>
 Act as an expert web developer.
@@ -128,8 +187,13 @@ The website should have:
         </div>
         
         <div class="slide">
-            <h3>Code Example: Website from a Prompt</h3>
-            <p>And here's a snippet of what ChatGPT might produce:</p>
+            <h3 data-en="Code Example: Website from a Prompt" data-zh="代码示例：从提示生成网站">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                </svg>
+                Code Example: Website from a Prompt
+            </h3>
+            <p data-en="And here's a snippet of what ChatGPT might produce:" data-zh="这是ChatGPT可能产生的代码片段：">And here's a snippet of what ChatGPT might produce:</p>
             <div class="code-block">
                 <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
@@ -152,8 +216,13 @@ The website should have:
         </div>
 
         <div class="slide">
-            <h3>Prompt Example: Making a Game</h3>
-            <p>Let's try making a simple Python game.</p>
+            <h3 data-en="Prompt Example: Making a Game" data-zh="提示示例：制作游戏">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                </svg>
+                Prompt Example: Making a Game
+            </h3>
+            <p data-en="Let's try making a simple Python game." data-zh="让我们尝试制作一个简单的Python游戏。">Let's try making a simple Python game.</p>
             <div class="code-block">
                 <pre><code>
 Act as a Python game developer.
@@ -171,63 +240,98 @@ The game should have:
         </div>
 
         <div class="slide">
-            <h2>Section 3: Image Generation</h2>
+            <h2 data-en="Section 3: Image Generation" data-zh="第三部分：图像生成">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                </svg>
+                Section 3: Image Generation
+            </h2>
         </div>
 
         <div class="slide">
-            <h3>Perfecting the Image Prompt</h3>
-            <p>For image generation, detail is key. The model can't see what's in your head.</p>
+            <h3 data-en="Perfecting the Image Prompt" data-zh="完善图像提示">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                Perfecting the Image Prompt
+            </h3>
+            <p data-en="For image generation, detail is key. The model can't see what's in your head." data-zh="对于图像生成，细节是关键。模型无法看到你脑海中的想法。">For image generation, detail is key. The model can't see what's in your head.</p>
             <ul>
-                <li><strong>Subject:</strong> What is the main focus? Be very descriptive.</li>
-                <li><strong>Style:</strong> Photorealistic, cartoon, oil painting, 3D render?</li>
-                <li><strong>Composition:</strong> Close-up, wide shot, portrait?</li>
-                <li><strong>Lighting:</strong> Soft morning light, dramatic cinematic lighting, neon glow?</li>
-                <li><strong>Keywords:</strong> Use terms like "masterpiece", "highly detailed", "8K".</li>
+                <li><strong data-en="Subject:" data-zh="主题：">Subject:</strong> <span data-en="What is the main focus? Be very descriptive." data-zh="主要焦点是什么？要非常详细地描述。">What is the main focus? Be very descriptive.</span></li>
+                <li><strong data-en="Style:" data-zh="风格：">Style:</strong> <span data-en="Photorealistic, cartoon, oil painting, 3D render?" data-zh="写实、卡通、油画、3D渲染？">Photorealistic, cartoon, oil painting, 3D render?</span></li>
+                <li><strong data-en="Composition:" data-zh="构图：">Composition:</strong> <span data-en="Close-up, wide shot, portrait?" data-zh="特写、广角、肖像？">Close-up, wide shot, portrait?</span></li>
+                <li><strong data-en="Lighting:" data-zh="照明：">Lighting:</strong> <span data-en="Soft morning light, dramatic cinematic lighting, neon glow?" data-zh="柔和的晨光、戏剧性的电影照明、霓虹光芒？">Soft morning light, dramatic cinematic lighting, neon glow?</span></li>
+                <li><strong data-en="Keywords:" data-zh="关键词：">Keywords:</strong> <span data-en="Use terms like 'masterpiece', 'highly detailed', '8K'." data-zh="使用'杰作'、'高度详细'、'8K'等术语。">Use terms like "masterpiece", "highly detailed", "8K".</span></li>
             </ul>
         </div>
         
         <div class="slide">
-            <h3>Image Prompt Examples</h3>
+            <h3 data-en="Image Prompt Examples" data-zh="图像提示示例">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+                Image Prompt Examples
+            </h3>
             <div class="two-columns">
                 <div class="column">
-                    <h4>Simple Prompt</h4>
-                    <p><em>"An astronaut"</em></p>
-                    <p class="prompt-result">Result: A generic, likely simple drawing of an astronaut.</p>
+                    <h4 data-en="Simple Prompt" data-zh="简单提示">Simple Prompt</h4>
+                    <p><em data-en="'An astronaut'" data-zh="'一个宇航员'">"An astronaut"</em></p>
+                    <p class="prompt-result" data-en="Result: A generic, likely simple drawing of an astronaut." data-zh="结果：一个通用的、可能简单的宇航员图画。">Result: A generic, likely simple drawing of an astronaut.</p>
                 </div>
                 <div class="column">
-                    <h4>Detailed Prompt</h4>
-                    <p><em>"Photorealistic shot of an astronaut on a vibrant, alien planet with two suns, dramatic lighting, 1970s sci-fi film style, highly detailed."</em></p>
-                    <p class="prompt-result">Result: A rich, cinematic, and specific image.</p>
+                    <h4 data-en="Detailed Prompt" data-zh="详细提示">Detailed Prompt</h4>
+                    <p><em data-en="'Photorealistic shot of an astronaut on a vibrant, alien planet with two suns, dramatic lighting, 1970s sci-fi film style, highly detailed.'" data-zh="'写实镜头：一个宇航员在充满活力的外星行星上，有两个太阳，戏剧性照明，1970年代科幻电影风格，高度详细。'">"Photorealistic shot of an astronaut on a vibrant, alien planet with two suns, dramatic lighting, 1970s sci-fi film style, highly detailed."</em></p>
+                    <p class="prompt-result" data-en="Result: A rich, cinematic, and specific image." data-zh="结果：一个丰富、电影般且具体的图像。">Result: A rich, cinematic, and specific image.</p>
                 </div>
             </div>
         </div>
         
         <div class="slide">
-            <h3>Hands-On Demo: Let's build a prompt!</h3>
-            <p>We can combine elements to create a unique image. Let's pick from these categories or suggest your own!</p>
+            <h3 data-en="Hands-On Demo: Let's build a prompt!" data-zh="实践演示：让我们构建一个提示！">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                </svg>
+                Hands-On Demo: Let's build a prompt!
+            </h3>
+            <p data-en="We can combine elements to create a unique image. Let's pick from these categories or suggest your own!" data-zh="我们可以组合元素来创建独特的图像。让我们从这些类别中选择或提出你自己的建议！">We can combine elements to create a unique image. Let's pick from these categories or suggest your own!</p>
             <div class="code-block" style="text-align: center;">
                 <pre><code>[Style] of a [Subject] with [Details] in a [Setting]</code></pre>
             </div>
-            <p style="margin-top: 20px;"><strong>Example:</strong> "A watercolor painting of a robot librarian with glowing eyes in a futuristic library."</p>
+            <p style="margin-top: 20px;"><strong data-en="Example:" data-zh="示例：">Example:</strong> <span data-en="'A watercolor painting of a robot librarian with glowing eyes in a futuristic library.'" data-zh="'一幅水彩画：一个机器人图书管理员，发光的眼睛，在未来的图书馆里。'">"A watercolor painting of a robot librarian with glowing eyes in a futuristic library."</span></p>
         </div>
 
         <div class="slide">
-            <h2>Section 4: Computer Vision</h2>
+            <h2 data-en="Section 4: Computer Vision" data-zh="第四部分：计算机视觉">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Section 4: Computer Vision
+            </h2>
         </div>
         
         <div class="slide">
-            <h3>Real-time Computer Vision</h3>
-            <p>Computer vision allows machines to "see" and interpret the visual world. Real-time applications are everywhere:</p>
+            <h3 data-en="Real-time Computer Vision" data-zh="实时计算机视觉">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                </svg>
+                Real-time Computer Vision
+            </h3>
+            <p data-en="Computer vision allows machines to 'see' and interpret the visual world. Real-time applications are everywhere:" data-zh="计算机视觉让机器能够'看到'并解释视觉世界。实时应用无处不在：">Computer vision allows machines to "see" and interpret the visual world. Real-time applications are everywhere:</p>
             <ul>
-                <li>Self-driving cars detecting obstacles.</li>
-                <li>Manufacturing for quality control.</li>
-                <li>Augmented Reality filters on social media.</li>
+                <li data-en="Self-driving cars detecting obstacles." data-zh="自动驾驶汽车检测障碍物。">Self-driving cars detecting obstacles.</li>
+                <li data-en="Manufacturing for quality control." data-zh="制造业质量控制。">Manufacturing for quality control.</li>
+                <li data-en="Augmented Reality filters on social media." data-zh="社交媒体上的增强现实滤镜。">Augmented Reality filters on social media.</li>
             </ul>
         </div>
 
         <div class="slide">
-            <h3>Code Example: Simple CV with Python</h3>
-            <p>Here is a Python script using OpenCV to detect faces in a webcam feed.</p>
+            <h3 data-en="Code Example: Simple CV with Python" data-zh="代码示例：Python简单计算机视觉">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                </svg>
+                Code Example: Simple CV with Python
+            </h3>
+            <p data-en="Here is a Python script using OpenCV to detect faces in a webcam feed." data-zh="这是一个使用OpenCV在摄像头画面中检测人脸的Python脚本。">Here is a Python script using OpenCV to detect faces in a webcam feed.</p>
             <div class="code-block">
                 <pre><code class="language-python">
 import cv2
@@ -258,50 +362,80 @@ cv2.destroyAllWindows()
 
 
         <div class="slide">
-            <h2>Section 5: AI Ethics & Safety</h2>
+            <h2 data-en="Section 5: AI Ethics & Safety" data-zh="第五部分：AI伦理与安全">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                </svg>
+                Section 5: AI Ethics & Safety
+            </h2>
         </div>
 
         <div class="slide">
-            <h3>Responsible AI</h3>
-            <p>With great power comes great responsibility. It's crucial to consider the ethical implications of AI.</p>
+            <h3 data-en="Responsible AI" data-zh="负责任的AI">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Responsible AI
+            </h3>
+            <p data-en="With great power comes great responsibility. It's crucial to consider the ethical implications of AI." data-zh="能力越大，责任越大。考虑AI的伦理影响至关重要。">With great power comes great responsibility. It's crucial to consider the ethical implications of AI.</p>
             <ul>
-                <li><strong>Bias:</strong> AI models can learn and amplify biases present in their training data.</li>
-                <li><strong>Privacy:</strong> Systems that process personal data must be designed to be secure and protect privacy.</li>
-                <li><strong>Misinformation:</strong> Generative models can be used to create convincing but false information.</li>
-                <li><strong>Accountability:</strong> Who is responsible when an AI system makes a mistake?</li>
+                <li><strong data-en="Bias:" data-zh="偏见：">Bias:</strong> <span data-en="AI models can learn and amplify biases present in their training data." data-zh="AI模型可以学习并放大训练数据中存在的偏见。">AI models can learn and amplify biases present in their training data.</span></li>
+                <li><strong data-en="Privacy:" data-zh="隐私：">Privacy:</strong> <span data-en="Systems that process personal data must be designed to be secure and protect privacy." data-zh="处理个人数据的系统必须设计为安全且保护隐私。">Systems that process personal data must be designed to be secure and protect privacy.</span></li>
+                <li><strong data-en="Misinformation:" data-zh="虚假信息：">Misinformation:</strong> <span data-en="Generative models can be used to create convincing but false information." data-zh="生成模型可用于创建令人信服但虚假的信息。">Generative models can be used to create convincing but false information.</span></li>
+                <li><strong data-en="Accountability:" data-zh="问责制：">Accountability:</strong> <span data-en="Who is responsible when an AI system makes a mistake?" data-zh="当AI系统出错时，谁负责？">Who is responsible when an AI system makes a mistake?</span></li>
             </ul>
         </div>
 
 
         <div class="slide">
-            <h2>Section 6: The Future is Agents</h2>
+            <h2 data-en="Section 6: The Future is Agents" data-zh="第六部分：未来是智能体">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                Section 6: The Future is Agents
+            </h2>
         </div>
 
         <div class="slide">
-            <h3>Using AI Agents</h3>
-            <p>AI agents are systems that can perceive their environment and take actions to achieve goals. They represent a shift from single-response tools to persistent collaborators.</p>
-            <p>Think of them as autonomous helpers that can perform multi-step tasks like:</p>
+            <h3 data-en="Using AI Agents" data-zh="使用AI智能体">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Using AI Agents
+            </h3>
+            <p data-en="AI agents are systems that can perceive their environment and take actions to achieve goals. They represent a shift from single-response tools to persistent collaborators." data-zh="AI智能体是能够感知环境并采取行动实现目标的系统。它们代表了从单一响应工具到持续协作者的转变。">AI agents are systems that can perceive their environment and take actions to achieve goals. They represent a shift from single-response tools to persistent collaborators.</p>
+            <p data-en="Think of them as autonomous helpers that can perform multi-step tasks like:" data-zh="将它们视为可以执行多步骤任务的自主助手，例如：">Think of them as autonomous helpers that can perform multi-step tasks like:</p>
             <ul class="task-list">
-                <li>Planning and executing a software project.</li>
-                <li>Performing complex data analysis and generating a report.</li>
-                <li>Automating research on a specific topic.</li>
+                <li data-en="Planning and executing a software project." data-zh="规划和执行软件项目。">Planning and executing a software project.</li>
+                <li data-en="Performing complex data analysis and generating a report." data-zh="执行复杂的数据分析并生成报告。">Performing complex data analysis and generating a report.</li>
+                <li data-en="Automating research on a specific topic." data-zh="自动化特定主题的研究。">Automating research on a specific topic.</li>
             </ul>
         </div>
         
         <div class="slide">
-            <h3>How Agents Work (Simplified)</h3>
-            <p>Many agents follow a "ReAct" (Reason and Act) loop:</p>
+            <h3 data-en="How Agents Work (Simplified)" data-zh="智能体如何工作（简化版）">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                How Agents Work (Simplified)
+            </h3>
+            <p data-en="Many agents follow a 'ReAct' (Reason and Act) loop:" data-zh="许多智能体遵循'ReAct'（推理和行动）循环：">Many agents follow a "ReAct" (Reason and Act) loop:</p>
             <ol>
-                <li><strong>Goal:</strong> Receive a high-level objective from the user.</li>
-                <li><strong>Think:</strong> Break down the goal into smaller, actionable steps.</li>
-                <li><strong>Act:</strong> Execute a step (e.g., run code, search the web, write to a file).</li>
-                <li><strong>Observe:</strong> Analyze the result of the action.</li>
-                <li><strong>Repeat:</strong> Adjust the plan based on the observation and continue until the goal is met.</li>
+                <li><strong data-en="Goal:" data-zh="目标：">Goal:</strong> <span data-en="Receive a high-level objective from the user." data-zh="从用户接收高级目标。">Receive a high-level objective from the user.</span></li>
+                <li><strong data-en="Think:" data-zh="思考：">Think:</strong> <span data-en="Break down the goal into smaller, actionable steps." data-zh="将目标分解为更小的、可操作的步骤。">Break down the goal into smaller, actionable steps.</span></li>
+                <li><strong data-en="Act:" data-zh="行动：">Act:</strong> <span data-en="Execute a step (e.g., run code, search the web, write to a file)." data-zh="执行一个步骤（例如，运行代码、搜索网络、写入文件）。">Execute a step (e.g., run code, search the web, write to a file).</span></li>
+                <li><strong data-en="Observe:" data-zh="观察：">Observe:</strong> <span data-en="Analyze the result of the action." data-zh="分析行动的结果。">Analyze the result of the action.</span></li>
+                <li><strong data-en="Repeat:" data-zh="重复：">Repeat:</strong> <span data-en="Adjust the plan based on the observation and continue until the goal is met." data-zh="根据观察调整计划并继续直到目标达成。">Adjust the plan based on the observation and continue until the goal is met.</span></li>
             </ol>
         </div>
 
         <div class="slide">
-            <h1>Thank You & Q&A</h1>
+            <h1 data-en="Thank You & Q&A" data-zh="谢谢 & 问答">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                Thank You & Q&A
+            </h1>
         </div>
 
         <!-- Navigation Arrows -->
