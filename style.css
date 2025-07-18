@@ -585,6 +585,52 @@ body {
 
 
 
+/* Dark Mode Text Colors - For Safari Mobile */
+@media (prefers-color-scheme: dark) {
+    .slide h1, .slide h2, .slide h3, .slide h4 {
+        color: #ffffff !important;
+    }
+    
+    .slide p {
+        color: #ffffff !important;
+    }
+    
+    .slide ul li {
+        color: #ffffff !important;
+        background: transparent !important;
+        border-left-color: #007bff !important;
+    }
+    
+    .slide ol li {
+        color: #ffffff !important;
+    }
+    
+    .timeline li {
+        color: #ffffff !important;
+    }
+    
+    .prompt-result {
+        color: #ffffff !important;
+        background: transparent !important;
+        border-left-color: #007bff !important;
+    }
+    
+    .task-list {
+        color: #ffffff !important;
+        background: transparent !important;
+    }
+    
+    .code-block {
+        color: #ffffff !important;
+        background: transparent !important;
+        border-color: #333 !important;
+    }
+    
+    .code-block code {
+        color: #ffffff !important;
+    }
+}
+
 /* Accessibility Improvements */
 @media (prefers-reduced-motion: reduce) {
     * {
