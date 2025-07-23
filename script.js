@@ -316,4 +316,56 @@ document.addEventListener('DOMContentLoaded', () => {
         prevBtn.addEventListener('click', hapticFeedback);
         translateBtn.addEventListener('click', hapticFeedback);
     }
+
+    // Image Prompt Builder Logic
+    const styleSelect = document.getElementById('styleSelect');
+    const subjectSelect = document.getElementById('subjectSelect');
+    const detailsSelect = document.getElementById('detailsSelect');
+    const settingSelect = document.getElementById('settingSelect');
+    const generatedPromptOutput = document.getElementById('generatedPrompt');
+
+    function updateGeneratedPrompt() {
+        const style = styleSelect.value;
+        const subject = subjectSelect.value;
+        const details = detailsSelect.value;
+        const setting = settingSelect.value;
+
+        let prompt = '';
+
+        if (style) {
+            prompt += `A ${style}`; 
+        }
+
+        if (subject) {
+            prompt += ` of ${subject}`;
+        }
+
+        if (details) {
+            prompt += ` ${details}`;
+        }
+
+        if (setting) {
+            prompt += ` ${setting}`;
+        }
+
+        if (!style && !subject && !details && !setting) {
+            generatedPromptOutput.textContent = '"A [Style] of [Subject] with [Details] in a [Setting]"'
+        } else {
+            generatedPromptOutput.textContent = `"${prompt.trim()}."`;
+        }
+    }
+
+    styleSelect.addEventListener('change', updateGeneratedPrompt);
+    subjectSelect.addEventListener('change', updateGeneratedPrompt);
+    detailsSelect.addEventListener('change', updateGeneratedPrompt);
+    settingSelect.addEventListener('change', updateGeneratedPrompt);
+
+    // Initial call to set the default prompt text
+    updateGeneratedPrompt();
+
+    // Loading Indicator Logic
+    window.addEventListener('load', () => {
+        const loadingIndicator = document.getElementById('loading');
+        loadingIndicator.style.display = 'none'; // Hide loading spinner once everything is loaded
+    });
 }); 
