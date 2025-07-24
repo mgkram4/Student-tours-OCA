@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>High School Humor</title>
+  <style>
+    :root {
+      --primary-color: #2d2d2d;
+      --accent-color: #ff9800;
+      --bg-color: #f5f7fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 1rem;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--primary-color);
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .jokes {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .joke {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .question {
+      font-weight: bold;
+      margin: 0 0 0.5rem;
+    }
+
+    .answer {
+      margin: 0;
+      color: var(--accent-color);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #121212;
+        color: #e0e0e0;
+      }
+      .joke {
+        background: #1e1e1e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to High School Humor!</h1>
+    <p>A quick laugh between classes.</p>
+  </header>
+
+  <main class="jokes">
+    <div class="joke">
+      <p class="question">Q: Why did the math book look so sad?</p>
+      <p class="answer">A: Because it had too many problems.</p>
+    </div>
+
+    <div class="joke">
+      <p class="question">Q: Why don’t scientists trust atoms?</p>
+      <p class="answer">A: Because they make up everything!</p>
+    </div>
+
+    <div class="joke">
+      <p class="question">Q: Why was the computer cold at school?</p>
+      <p class="answer">A: It left its Windows open.</p>
+    </div>
+
+    <div class="joke">
+      <p class="question">Q: What do you call fake spaghetti?</p>
+      <p class="answer">A: An impasta.</p>
+    </div>
+
+    <div class="joke">
+      <p class="question">Q: Why did the student eat his homework?</p>
+      <p class="answer">A: Because the teacher said it was a piece of cake!</p>
+    </div>
+  </main>
+</body>
+</html>
